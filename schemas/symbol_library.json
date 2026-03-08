@@ -39,6 +39,7 @@
       "title": "Symbol list",
       "description": "List of symbol definitions that are contained in this symbol library.",
       "items": {
+        "$ref": "https://raw.githubusercontent.com/chs2019/ElektroDesigner/refs/heads/main/schemas/symbol_definition.json"
       },
       "minItems": 0,
       "uniqueItems": true
