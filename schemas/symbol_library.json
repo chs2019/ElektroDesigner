@@ -39,11 +39,11 @@
       "title": "Symbol list",
       "description": "List of symbol definitions that are contained in this symbol library.",
       "items": {
-        "$ref": "http://chs2019.github.io/elektro-designer/schemas/symbol_definition.json"
+        
       },
       "minItems": 0,
       "uniqueItems": true
     }
   },
-  "required": ["elektrodesigner_symbol_lib", "symbol_definitions"]
+  "required": ["elektrodesigner_symbol_lib", "symbols"]
 }
