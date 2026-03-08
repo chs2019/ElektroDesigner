@@ -1,15 +1,68 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://raw.githubusercontent.com/chs2019/ElektroDesigner/refs/heads/main/schemas/symbol_definition.json",
-  "$comment": "file:///Users/chs/Projects/ElektroDesigner/schemas/symbol_definition.json",
   "title": "Symbol",
   "description": "The symbol token defines a symbol or sub-unit of a parent symbol. https://dev-docs.kicad.org/en/file-formats/sexpr-intro/index.html#_symbols",
   "type": "object",
   "properties": {
     "library_id": {
       "title": "Library ID (Symbol ID)",
-      "description": "The ID of the symbol within a symbol library."
+      "description": "The ID of the symbol within a symbol library.",
+      "$ref": "https://raw.githubusercontent.com/chs2019/ElektroDesigner/refs/heads/main/schemas/definitions/library_id.json"
+    },
+    "in_bom": {
+      "title": "Include in BOM",
+      "description": "Defines if a symbol is to be include in the bill of material output.",
+      "type": "boolean"
+    },
+    "symbol_properties": {
+      "title": "Symbol Properties",
+      "description": "List of properties that define the symbol",
+      "type": "object",
+      "properties": {
+        "reference": {
+          "type": "string",
+          "title": "Reference",
+          "description": "The reference of the symbol. The reference is used to identify the symbol in the library."
+        },
+        "value": {
+          "type": "string",
+          "title": "Value",
+          "description": "Symbol value string.",
+          "minLength": 1
+        },
+        "geometry": {
+          "type": "string",
+          "title": "Geometry",
+          "description": "Symbol geometry library identifier.",
+          "minLength": 0,
+          "default": ""
+        },
+        "datasheet": {
+          "type": "string",
+          "title": "Datasheet",
+          "description": "Symbol datasheet link.",
+          "minLength": 0, 
+          "default": ""
+        }
+      },
+      "required": ["reference", "value", "geometry", "datasheet"]
+    },
+    "graphic_items": {
+      "$ref": "https://raw.githubusercontent.com/chs2019/ElektroDesigner/refs/heads/main/schemas/definitions/svg.json",
+      "title": "Graphic Items",
+      "description": "Graphical definition of the symbol in SVG format."
+    },
+    "pins": {
+      "title": "Pins",
+      "description": "A list of pins that are used by the symbol. This section can be empty if the symbol does not have any pins.",
+      "type": "array",
+      "items": {
+        "$ref": "https://raw.githubusercontent.com/chs2019/ElektroDesigner/refs/heads/main/schemas/definitions/pin.json"
+      },
+      "minItems": 0,
+      "uniqueItems": true
     }
   },
-  "required": ["library_id"]
+  "required": ["library_id", "in_bom", "symbol_properties", "graphical_items", "pins"]
 }
