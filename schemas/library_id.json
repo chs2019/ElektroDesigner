@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "http://chs2019.github.io/elektro-designer/schemas/library_id.json",
+  "$id": "https://raw.githubusercontent.com/chs2019/ElektroDesigner/refs/heads/main/schemas/definitions/library_id.json",
   "title": "Library Identifier",
   "description": "The schematic symbol library and physical geometry library file formats use library identifiers. See https://dev-docs.kicad.org/en/file-formats/sexpr-intro/index.html#_library_identifier",
   "type": "object",
