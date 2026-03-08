@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://chs2019.github.io/elektro-designer/schemas/symbol_definition.json",
+  "title": "Symbol",
+  "description": "The symbol token defines a symbol or sub-unit of a parent symbol. https://dev-docs.kicad.org/en/file-formats/sexpr-intro/index.html#_symbols",
+  "type": "object",
+  "properties": {
+    "library_id": {
+      "title": "Library ID (Symbol ID)",
+      "description": "The ID of the symbol within a symbol library.",
+      "$ref": "http://chs2019.github.io/elektro-designer/schemas/library_id.json"
+    }
+  },
+  "required": ["library_id"]
+}
