@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://chs2019.github.io/elektro-designer/schemas/symbol_library.json",
+  "title": "Symbol library",
+  "description": "Library of schematics symbols for installation diagrams. See https://dev-docs.kicad.org/en/file-formats/sexpr-symbol-lib/index.html",
+  "type": "object",
+  "properties": {
+    "elektrodesigner_symbol_lib": {
+      "type": "object",
+      "title": "Header Section",
+      "description": "This header section contains library metadata. The elektrodesigner_symbol_lib token indicates that it is ElektroDesigner symbol library file.",
+      "properties": {
+        "version": {
+          "type": "string",
+          "title": "Version",
+          "description": "Version of the symbol library. This value is used to determine if a symbol library needs to be updated.",
+          "default": "1.0"
+        },
+        "generator": {
+          "type": "string",
+          "title": "Generator",
+          "description": "Name of the program that generated the symbol library."
+        },
+        "tags": {
+          "type": "array",
+          "title": "Tags",
+          "description": "List of tags for the symbol library",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      },
+      "required": ["version"]
+    },
+    "symbols": {
+      "type": "array",
+      "title": "Symbol list",
+      "description": "List of symbol definitions that are contained in this symbol library.",
+      "items": {
+        "$ref": "http://chs2019.github.io/elektro-designer/schemas/symbol_definition.json"
+      },
+      "minItems": 0,
+      "uniqueItems": true
+    }
+  },
+  "required": ["elektrodesigner_symbol_lib", "symbol_definitions"]
+}
