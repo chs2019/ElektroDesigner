@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/chs2019/ElektroDesigner/refs/heads/main/schemas/definitions/svg.json",
+  "title": "SVG",
+  "$comment": "TODO_ SVG",
+  "description": "The SVG code for a graphical representation of a component.",
+  "type": "string"
+}

@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/chs2019/ElektroDesigner/refs/heads/main/schemas/definitions/text_with_effects.json",
+  "title": "Text with effects",
+  "$comment": "Text objects with an optional effects section that defines how the text is displayed.",
+  "description": "The SVG code for a graphical representation of a component.",
+  "type": "object",
+  "properties": {
+    "text": {
+      "type": "string",
+      "title": "Text",
+      "description": "Text field value"
+    },
+    "effects": {
+      "type": "object",
+      "properties": {
+        "font": {
+          "type": "string",
+          "title": "Font style",
+          "description": "Font style in CSS format"
+        },
+        "justify": {
+          "type": "object",
+          "title": "Text Justification",
+          "description": "Text justification",
+          "properties": {
+            "horizontal": {
+              "enum": ["left", "right"],
+              "title": "Horizontal",
+              "description": "Justification along main text axis"
+            },
+            "vertical": {
+              "enum": ["top", "bottom"],
+              "title": "Vertical",
+              "description": "Justification along cross text axis"
+            }
+          }
+        },
+        "hide": {
+          "type": "boolean",
+          "title": "Hide",
+          "description": "Hide the text field",
+          "default": false
+        }
+      }
+    }
+  },
+  "required": ["text"]
+}

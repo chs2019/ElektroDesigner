@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/chs2019/ElektroDesigner/refs/heads/main/schemas/definitions/pin.json",
+  "title": "Pin Definition",
+  "description": "Defines a pin in a symbol definition. See https://dev-docs.kicad.org/en/file-formats/sexpr-intro/index.html#_symbol_pin",
+  "type": "object",
+  "properties": {
+    "pin_electrical_type": {
+      "$comment": "The PIN_ELECTRICAL_TYPE defines the pin electrical connection.",
+      "enum": [
+        "PIN_ELECTRICAL_TYPE_L",
+        "PIN_ELECTRICAL_TYPE_N",
+        "PIN_ELECTRICAL_TYPE_PEN",
+        "PIN_ELECTRICAL_TYPE_L_N_PE"
+      ],
+      "title": "Electrical type",
+      "description": "Defines the pin electrical connection."
+    },
+    "pin_graphic_style": {
+      "$comment": "PIN_GRAPHIC_STYLE",
+      "title": "Graphical Style",
+      "description": "The graphical style used to draw the pin",
+      "$ref": "https://raw.githubusercontent.com/chs2019/ElektroDesigner/refs/heads/main/schemas/definitions/svg.json"
+    },
+    "position_identifier": {
+      "$comment": "POSITION_IDENTIFIER",
+      "type": "object",
+      "title": "Position",
+      "description": "The X and Y coordinates and rotation angle of the connection point of the pin relative to the symbol origin position.",
+      "properties": {
+        "x": {
+          "type": "integer",
+          "title": "X",
+          "description": "The horizontal position of the object."
+        },
+        "y": {
+          "type": "integer",
+          "title": "Y",
+          "description": "The vertical position of the object."
+        },
+        "angle": {
+          "enum": [0, 90, 180, 270],
+          "title": "Angle",
+          "description": "The rotational angle of the object"
+        }
+      },
+      "required": ["x", "y"]
+    },
+    "length": {
+      "type": "integer",
+      "title": "Length",
+      "description": "The length of the pin."
+    },
+    "name": {
+      "title": "Name",
+      "description": "Name of the pin",
+      "$ref": "https://raw.githubusercontent.com/chs2019/ElektroDesigner/refs/heads/main/schemas/definitions/text_with_effects.json"
+    },
+    "number": {
+      "title": "Number",
+      "description": "Number of the pin",
+      "$ref": "https://raw.githubusercontent.com/chs2019/ElektroDesigner/refs/heads/main/schemas/definitions/text_with_effects.json"
+    }
+  },
+  "required": [
+    "pin_electrical_type",
+    "pin_graphic_style",
+    "position_identifier",
+    "length",
+    "name", 
+    "number"
+  ]
+}
