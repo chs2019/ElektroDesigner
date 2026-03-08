@@ -39,7 +39,6 @@
       "title": "Symbol list",
       "description": "List of symbol definitions that are contained in this symbol library.",
       "items": {
-        
       },
       "minItems": 0,
       "uniqueItems": true
