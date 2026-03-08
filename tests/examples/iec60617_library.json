@@ -1,7 +1,44 @@
 {
   "elektrodesigner_symbol_lib": {
     "version": "1.0",
-    "tags": ["IEC60617", "Installation diagrams"]
+    "tags": ["IEC60617", "Installation diagrams"],
+    "description": "A library of symbols for electrical installation diagrams",
+    "author": "Christian Schmidt",
+    "license": "MIT",
+    "homepage": "https://chs2019.github.io/ElektroDesigner/"
   },
-  "symbols": []
+  "symbols": [
+    {
+      "library_id": {
+        "library_nickname": "Parts",
+        "entry_name": "Outlet"
+      },
+      "in_bom": true,
+      "symbol_properties": {
+        "reference": "O",
+        "value": "0",
+        "geometry": "",
+        "datasheet": ""
+      },
+      "graphical_items": "",
+      "pins": [
+        {
+          "pin_electrical_type": "PIN_ELECTRICAL_TYPE_L_N_PE",
+          "pin_graphic_style": "",
+          "position_identifier": {
+            "x": 100,
+            "y": 0,
+            "angle": 90
+          },
+          "length": 100,
+          "name": {
+            "text": ""
+          },
+          "number": {
+            "text": ""
+          }
+        }
+      ]
+    }
+  ]
 }
