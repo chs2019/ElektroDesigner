@@ -19,7 +19,7 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "ajv --spec=draft2020 -s schemas/symbol_library.json -d tests/examples/iec60617_library.json",
+    "test": "ajv --spec=draft2020 -s schemas/symbol_library.json -r \"schemas/definitions/*.json\" -d tests/examples/iec60617_library.json",
     "postinstall": "pnpm install"
   },
   "dependencies": {
