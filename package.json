@@ -1,0 +1,28 @@
+{
+  "name": "elekrodesigner",
+  "version": "1.0.0",
+  "description": "Design and validate electrical installations",
+  "keywords": [
+    "electrical",
+    "installation",
+    "design",
+    "validate",
+    "VDE100",
+    "DIN18015"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "http://chs2019.github.io/elektro-designer"
+  },
+  "license": "ISC",
+  "author": "Christian Schmidt",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "ajv --spec=draft2020 -s schemas/symbol_library.json -d tests/examples/iec60617_library.json",
+    "postinstall": "pnpm install"
+  },
+  "dependencies": {
+    "ajv-cli": "^5.0.0"
+  }
+}
